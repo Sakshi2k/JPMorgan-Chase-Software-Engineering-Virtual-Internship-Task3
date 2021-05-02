@@ -18,9 +18,8 @@ class App extends Component<{}, IState> {
   }
 
   renderGraph() {
-    if (this.state.showGraph) {
+    if (this.state.showGraph)
       return (<Graph data={this.state.data}/>)
-    }
   }
 
   getDataFromServer() {
@@ -33,7 +32,8 @@ class App extends Component<{}, IState> {
         });
       });
       x++;
-      if (x > 1000) {
+      // if (x > 1000) {
+      if (x > 600) {    // for development
         clearInterval(interval);
       }
     }, 100);
